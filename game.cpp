@@ -10,17 +10,17 @@ int po[100],poo[100];
 char a[28][40]={' '};
 using namespace std;
 int prev;
-int score;
+int max_score;
 bool draw(int r,int c,int n)
 {
     int i;
-    cout<<"score is: "<<score<<endl;
+    cout<<"max_score is: "<<max_score<<endl;
     pos(n);
     if(check()==false)
     {
         system("cls");
         cout<<"game over..."<<endl;
-        cout<<"score is: "<<score<<endl;
+        cout<<"max_score is: "<<max_score<<endl;
         return false;
     }
     a[r][c]='#';
@@ -52,7 +52,7 @@ bool draw(int r,int c,int n)
         if(r==pr&&c==pc)
         {
             length+=1;
-            score+=1;
+            max_score+=1;
            a[r][c]=' ';
            srand(time(NULL));
             r1=rand()%(27);
